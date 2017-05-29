@@ -18,7 +18,12 @@ namespace Aula2405_EFMF.Controllers
 
         public List<Categoria> Listar()
         {
-            return contexto.Categorias.ToList();
+            return contexto.Categorias.Where(c => c.Ativo == true).ToList();
+        }
+
+        public List<Categoria> ListarInativos()
+        {
+            return contexto.Categorias.Where(c => c.Ativo == false).ToList();
         }
 
         public Categoria BuscarCategoriaPorId (int id)
@@ -26,9 +31,17 @@ namespace Aula2405_EFMF.Controllers
             return contexto.Categorias.Find(id);
         }
 
-        public void Excluir(Categoria categoria)
+        // Exclusao fisica (apaga o registro do banco)
+        /*public void Excluir(Categoria categoria)
         {
             contexto.Entry(categoria).State = System.Data.Entity.EntityState.Deleted;
+            contexto.SaveChanges();
+        }*/
+
+        public void Excluir(Categoria categoria)
+        {
+            categoria.Ativo = false;
+            contexto.Entry(categoria).State = System.Data.Entity.EntityState.Modified;
             contexto.SaveChanges();
         }
         public void Editar(Categoria categoria)

@@ -12,8 +12,11 @@ namespace Aula2405_EFMF.Views.Categorias
         {
             CategoriasController ctrl = new CategoriasController();
             List<Categoria> lista = ctrl.Listar();
-            gdvCategorias.DataSource = lista.OrderBy(c => c.Nome);
-            gdvCategorias.DataBind(); 
+            gdvCategorias.DataSource = lista.OrderBy(c => c.Id);
+            gdvCategorias.DataBind();
+
+            gdvCategoriasExcluidas.DataSource = ctrl.ListarInativos();
+            gdvCategoriasExcluidas.DataBind();
         }
     }
 }

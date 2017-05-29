@@ -10,8 +10,9 @@ using System.Web.UI.WebControls;
 namespace Aula2405_EFMF.Views
 {
 
-    public partial class Cadastro : CategoriasController
+    public partial class Cadastro : BasePage
     {
+        
         //Categoria cat = new Categoria();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,13 +26,17 @@ namespace Aula2405_EFMF.Views
             nome = txtNome.Text;
             descricao = txtNome.Text;
             */
+            CategoriasController ctrl = new CategoriasController();
             Categoria cat = new Categoria();
 
             cat.Nome = txtNome.Text;
             cat.Descricao = txtDescricao.Text;
-
-            contexto.Categorias.Add(cat);
-            contexto.SaveChanges();
+            cat.Ativo = true;
+            ctrl.Adicionar(cat);
+          
+     
+            //contexto.Categorias.Add(cat);
+            //contexto.SaveChanges();
         }
 
 

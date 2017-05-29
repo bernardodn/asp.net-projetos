@@ -20,7 +20,8 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Descricao" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Categoria_Id" Type="int" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+    <Property Name="CategoriaId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Categorias">
     <Key>
@@ -29,7 +30,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Descricao" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="ProdutoId" Type="int" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
   </EntityType>
   <Association Name="ProdutoCategoria">
     <End Role="Produto" Type="BaseDados.Store.Produtos" Multiplicity="*" />
@@ -39,7 +40,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Produto">
-        <PropertyRef Name="Categoria_Id" />
+        <PropertyRef Name="CategoriaId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -62,7 +63,9 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" />
           <Property Name="Descricao" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="Ativo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Categoria" Relationship="BaseDados.ProdutoCategoria" FromRole="Produto" ToRole="Categoria" />
+          <Property Name="CategoriaId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Categoria">
           <Key>
@@ -71,12 +74,20 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" />
           <Property Name="Descricao" Type="String" Nullable="true" MaxLength="Max" />
-          <Property Name="ProdutoId" Type="Int32" Nullable="false" />
+          <Property Name="Ativo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Produtos" Relationship="BaseDados.ProdutoCategoria" FromRole="Categoria" ToRole="Produto" />
         </EntityType>
         <Association Name="ProdutoCategoria">
           <End Type="BaseDados.Produto" Role="Produto" Multiplicity="*" />
           <End Type="BaseDados.Categoria" Role="Categoria" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produto">
+              <PropertyRef Name="CategoriaId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -90,6 +101,8 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
           <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -99,18 +112,10 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
           <ScalarProperty Name="Descricao" ColumnName="Descricao" />
-          <ScalarProperty Name="ProdutoId" ColumnName="ProdutoId" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="ProdutoCategoria" TypeName="BaseDados.ProdutoCategoria" StoreEntitySet="Produtos">
-      <EndProperty Name="Categoria">
-        <ScalarProperty Name="Id" ColumnName="Categoria_Id" />
-      </EndProperty>
-      <EndProperty Name="Produto">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

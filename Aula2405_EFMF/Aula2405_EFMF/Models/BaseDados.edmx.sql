@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/24/2017 11:27:38
+-- Date Created: 05/29/2017 09:25:37
 -- Generated from EDMX file: C:\Bernardo\asp.net-projetos\Aula2405_EFMF\Aula2405_EFMF\Models\BaseDados.edmx
 -- --------------------------------------------------
 
@@ -18,7 +18,7 @@ GO
 -- --------------------------------------------------
 
 IF OBJECT_ID(N'[dbo].[FK_ProdutoCategoria]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Categorias] DROP CONSTRAINT [FK_ProdutoCategoria];
+    ALTER TABLE [dbo].[Produtos] DROP CONSTRAINT [FK_ProdutoCategoria];
 GO
 
 -- --------------------------------------------------
@@ -41,7 +41,8 @@ CREATE TABLE [dbo].[Produtos] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Nome] nvarchar(50)  NOT NULL,
     [Descricao] nvarchar(max)  NULL,
-    [Categoria_Id] int  NOT NULL
+    [Ativo] bit  NOT NULL,
+    [CategoriaId] int  NOT NULL
 );
 GO
 
@@ -50,7 +51,7 @@ CREATE TABLE [dbo].[Categorias] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Nome] nvarchar(50)  NOT NULL,
     [Descricao] nvarchar(max)  NULL,
-    [ProdutoId] int  NOT NULL
+    [Ativo] bit  NOT NULL
 );
 GO
 
@@ -74,10 +75,10 @@ GO
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [Categoria_Id] in table 'Produtos'
+-- Creating foreign key on [CategoriaId] in table 'Produtos'
 ALTER TABLE [dbo].[Produtos]
 ADD CONSTRAINT [FK_ProdutoCategoria]
-    FOREIGN KEY ([Categoria_Id])
+    FOREIGN KEY ([CategoriaId])
     REFERENCES [dbo].[Categorias]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -86,7 +87,7 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_ProdutoCategoria'
 CREATE INDEX [IX_FK_ProdutoCategoria]
 ON [dbo].[Produtos]
-    ([Categoria_Id]);
+    ([CategoriaId]);
 GO
 
 -- --------------------------------------------------
