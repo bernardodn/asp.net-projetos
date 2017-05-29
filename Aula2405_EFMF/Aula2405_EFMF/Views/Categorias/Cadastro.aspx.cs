@@ -1,4 +1,5 @@
-﻿using Aula2405_EFMF.Models;
+﻿using Aula2405_EFMF.Controllers;
+using Aula2405_EFMF.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Web.UI.WebControls;
 namespace Aula2405_EFMF.Views
 {
 
-    public partial class Cadastro : BasePage
+    public partial class Cadastro : CategoriasController
     {
         //Categoria cat = new Categoria();
         protected void Page_Load(object sender, EventArgs e)

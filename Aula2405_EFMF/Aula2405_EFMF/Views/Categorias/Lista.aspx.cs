@@ -1,4 +1,5 @@
-﻿using Aula2405_EFMF.Models;
+﻿using Aula2405_EFMF.Controllers;
+using Aula2405_EFMF.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,10 @@ namespace Aula2405_EFMF.Views.Categorias
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Categoria> categorias = contexto.Categorias.ToList();
+            CategoriasController ctrl = new CategoriasController();
+            List<Categoria> lista = ctrl.Listar();
+            gdvCategorias.DataSource = lista.OrderBy(c => c.Nome);
+            gdvCategorias.DataBind(); 
         }
     }
 }
