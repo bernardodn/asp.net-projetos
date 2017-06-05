@@ -24,5 +24,10 @@ namespace ProjetoFinal.Controllers
         {
             return contexto.Funcionarios.ToList();
         }
+
+        public static implicit operator FuncionariosController(EmpresasController v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

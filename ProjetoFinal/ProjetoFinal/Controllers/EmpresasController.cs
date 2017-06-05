@@ -19,9 +19,6 @@ namespace ProjetoFinal.Controllers
                 contexto.SaveChanges();
             }
         }
-
-        
-
         public List<Empresa> Listar()
         {
             return contexto.Empresas.ToList();

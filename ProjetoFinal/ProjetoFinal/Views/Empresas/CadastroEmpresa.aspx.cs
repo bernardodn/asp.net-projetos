@@ -14,9 +14,10 @@ namespace ProjetoFinal.Views.Empresas
     public partial class CadastroEmpresa : System.Web.UI.Page
     {
         protected BaseProjetoContainer contexto = new BaseProjetoContainer();
+        EmpresasController controller = new EmpresasController();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            EmpresasController controller = new EmpresasController();
             List<Empresa> lista = controller.Listar();
             gdvEmpresas.DataSource = lista.OrderBy(c => c.Id);
             gdvEmpresas.DataBind();
@@ -24,19 +25,24 @@ namespace ProjetoFinal.Views.Empresas
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
-            EmpresasController controller = new EmpresasController();
             Empresa empresa = new Empresa();
-
             empresa.Nome = txtNomeEmpresa.Text;
             controller.AdicionarEmpresa(empresa);
         }
 
-        protected void btnRemover_Click(object sender, EventArgs e)
+        protected void btnExcluir_Click(object sender, EventArgs e)
         {
-           
+            Empresa empresa;
+            using (var ctx = new BaseProjetoContainer())
+            { 
+                empresa = ctx.Empresas.Where(s => s.Nome == (txtExcluir.Text)).FirstOrDefault<Empresa>();
+            }
+            using (var novoCtx = new BaseProjetoContainer())
+            {
+                novoCtx.Entry(empresa).State = System.Data.Entity.EntityState.Deleted;
+                novoCtx.SaveChanges();
+            }
         }
-
-
     }
 
 }
