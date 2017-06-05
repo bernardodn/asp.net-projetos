@@ -11,9 +11,10 @@ namespace ProjetoFinal.Views.Funcionarios
         FuncionariosController controller = new FuncionariosController();
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Funcionario> lista = controller.Listar();
-            gdvFuncionarios.DataSource = lista.OrderBy(c => c.Id);
-            gdvFuncionarios.DataBind();
+            //List<Funcionario> lista = controller.Listar();
+            //gdvFuncionarios.DataSource = lista.OrderBy(c => c.Id);
+            //gdvFuncionarios.DataBind();
+            AtualizaLista();
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
@@ -27,7 +28,7 @@ namespace ProjetoFinal.Views.Funcionarios
             funcionario.EmpresaId = Convert.ToInt32(txtIdEmpresaFuncionario.Text);
 
             controller.AdicionarFuncionario(funcionario);
-
+            AtualizaLista();
         }
 
         protected void btnExcluir_Click(object sender, EventArgs e)
@@ -42,6 +43,31 @@ namespace ProjetoFinal.Views.Funcionarios
                 novoCtx.Entry(funcionario).State = System.Data.Entity.EntityState.Deleted;
                 novoCtx.SaveChanges();
             }
+            AtualizaLista();
+        }
+
+        protected void AtualizaLista()
+        {
+            List<Funcionario> lista = controller.Listar();
+            gdvFuncionarios.DataSource = lista.OrderBy(c => c.Id);
+            gdvFuncionarios.DataBind();
+        }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            using (var novoCtx = new BaseProjetoContainer())
+            {
+                var result = novoCtx.Funcionarios.SingleOrDefault(b => b.CPF == (txtCpfFuncionario.Text));
+                if (result != null)
+                {
+                    result.CPF = txtCpfFuncionario.Text;
+                    result.Nome = txtNomeFuncionario.Text;
+                    result.DataDeNascimento = txtDataDeNascimentoFuncionario.Text;
+                    result.EmpresaId = Convert.ToInt32(txtIdEmpresaFuncionario.Text);
+                    novoCtx.SaveChanges();
+                }
+            }
+            AtualizaLista();
         }
     }
 }

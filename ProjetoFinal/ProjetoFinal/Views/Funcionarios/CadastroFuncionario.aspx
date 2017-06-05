@@ -15,6 +15,7 @@
     <asp:TextBox cssclass="form-control" ID="txtIdEmpresaFuncionario" runat="server"></asp:TextBox>
     <br />
     <asp:Button ID="btnSalvar" CssClass="btn btn-primary" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
+    <asp:Button ID="btnEditar" cssclass="btn btn-primary" runat="server" Text="Editar" OnClick="btnEditar_Click" />
     <br />
     <h3>Lista de Funcionários</h3>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">

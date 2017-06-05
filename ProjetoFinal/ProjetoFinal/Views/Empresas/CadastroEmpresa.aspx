@@ -4,7 +4,13 @@
     <asp:Label ID="lblNomeEmpresa" runat="server" Text="Nome da empresa:"></asp:Label> 
     <asp:TextBox ID="txtNomeEmpresa" cssclass="form-control" runat="server"></asp:TextBox>
     <br />
-    <asp:Button ID="btnSalvar" cssclass="btn btn-primary" runat="server" Text="Salvar" OnClick="btnSalvar_Click" /> 
+    <asp:Button ID="btnSalvar" cssclass="btn btn-primary" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
+    <br /> 
+    <br />
+    Editar:
+    <asp:TextBox ID="txtEditar" cssclass="form-control" runat="server"></asp:TextBox>
+    <br />
+    <asp:Button ID="btnEditar" cssclass="btn btn-primary" runat="server" Text="Editar" OnClick="btnEditar_Click" />
     <br />
     <h3>Lista de Empresas Cadastradas</h3>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server"><ContentTemplate>

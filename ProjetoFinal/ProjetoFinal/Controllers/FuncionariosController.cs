@@ -7,9 +7,8 @@ using System.Web;
 namespace ProjetoFinal.Controllers
 {
     
-    public class FuncionariosController
+    public class FuncionariosController : BaseController
     {
-        protected BaseProjetoContainer contexto = new BaseProjetoContainer();
         public void AdicionarFuncionario(Funcionario funcionario)
         {
             if (funcionario != null)

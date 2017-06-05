@@ -7,11 +7,8 @@ using System.Web;
 
 namespace ProjetoFinal.Controllers
 {
-    public class EmpresasController
-    {
-        protected BaseProjetoContainer contexto = new BaseProjetoContainer();
-
-        public void AdicionarEmpresa(Empresa empresa)
+    public class EmpresasController: BaseController
+    {        public void AdicionarEmpresa(Empresa empresa)
         {
             if (empresa != null)
             {
@@ -22,6 +19,12 @@ namespace ProjetoFinal.Controllers
         public List<Empresa> Listar()
         {
             return contexto.Empresas.ToList();
+        }
+
+        public void Editar(Empresa empresa)
+        {
+            contexto.Entry(empresa).State = System.Data.Entity.EntityState.Modified;
+            contexto.SaveChanges();
         }
     }
 }

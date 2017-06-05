@@ -18,9 +18,10 @@ namespace ProjetoFinal.Views.Empresas
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Empresa> lista = controller.Listar();
-            gdvEmpresas.DataSource = lista.OrderBy(c => c.Id);
-            gdvEmpresas.DataBind();
+            //List<Empresa> lista = controller.Listar();
+            //gdvEmpresas.DataSource = lista.OrderBy(c => c.Id);
+            //gdvEmpresas.DataBind();
+            AtualizaLista();
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
@@ -28,8 +29,16 @@ namespace ProjetoFinal.Views.Empresas
             Empresa empresa = new Empresa();
             empresa.Nome = txtNomeEmpresa.Text;
             controller.AdicionarEmpresa(empresa);
+            AtualizaLista();
         }
 
+
+        protected void AtualizaLista()
+        {
+            List<Empresa> lista = controller.Listar();
+            gdvEmpresas.DataSource = lista.OrderBy(c => c.Id);
+            gdvEmpresas.DataBind();
+        }
         protected void btnExcluir_Click(object sender, EventArgs e)
         {
             Empresa empresa;
@@ -42,6 +51,21 @@ namespace ProjetoFinal.Views.Empresas
                 novoCtx.Entry(empresa).State = System.Data.Entity.EntityState.Deleted;
                 novoCtx.SaveChanges();
             }
+            AtualizaLista();
+        }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            using (var novoCtx = new BaseProjetoContainer())
+            {
+                var result = novoCtx.Empresas.SingleOrDefault(b => b.Nome == (txtNomeEmpresa.Text));
+                if (result != null)
+                {
+                    result.Nome = txtEditar.Text;
+                    novoCtx.SaveChanges();
+                }
+            }
+            AtualizaLista();
         }
     }
 

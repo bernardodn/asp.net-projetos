@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/01/2017 23:45:13
--- Generated from EDMX file: C:\Users\Bernardo Dolata Neto\Documents\asp.net\asp.net-projetos\ProjetoFinal\ProjetoFinal\Models\BaseProjeto.edmx
+-- Date Created: 06/05/2017 08:26:34
+-- Generated from EDMX file: C:\Bernardo\asp.net\asp.net-projetos\ProjetoFinal\ProjetoFinal\Models\BaseProjeto.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,11 +17,20 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_EmpresaFuncionario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Funcionarios] DROP CONSTRAINT [FK_EmpresaFuncionario];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Empresas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Empresas];
+GO
+IF OBJECT_ID(N'[dbo].[Funcionarios]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Funcionarios];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
