@@ -16,10 +16,9 @@
     <br />
     <asp:Button ID="btnSalvar" CssClass="btn btn-primary" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
     <h3>Editar Funcionários</h3>
+    <asp:Label ID="lblIdFuncionarioEditar" runat="server" Text="ID a ser editado: "></asp:Label>
     <br />
-    <asp:Label ID="lblNomeFuncionarioEditar" runat="server" Text="Nome do funcionário a ser editado: "></asp:Label>
-    <br />
-    <asp:TextBox ID="txtNomeFuncionarioEditar" cssclass="form-control" runat="server"></asp:TextBox>
+    <asp:TextBox ID="txtIdFuncionarioEditar" cssclass="form-control" runat="server"></asp:TextBox>
     <br />
     <asp:Label ID="lblCpfFuncionarioEditado" runat="server" Text="CPF desejado: "></asp:Label>
     <br />
@@ -56,7 +55,7 @@
         </ContentTemplate>
     </asp:UpdatePanel>
     <h3>Excluir Funcionário</h3>
-    <asp:Label ID="lblExcluir" runat="server" Text="Nome do funcionário: "></asp:Label> <asp:TextBox cssclass="form-control" ID="txtExcluir" runat="server"></asp:TextBox>
+    <asp:Label ID="lblExcluir" runat="server" Text="ID do funcionário: "></asp:Label> <asp:TextBox cssclass="form-control" ID="txtExcluir" runat="server"></asp:TextBox>
     <br />
     <asp:Button ID="btnExcluir" CssClass="btn btn-danger" runat="server" Text="Excluir" OnClick="btnExcluir_Click" />
 </asp:Content>

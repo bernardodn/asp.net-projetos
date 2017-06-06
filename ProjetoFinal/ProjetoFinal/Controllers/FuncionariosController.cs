@@ -22,9 +22,10 @@ namespace ProjetoFinal.Controllers
             return contexto.Funcionarios.ToList();
         }
 
-        public Funcionario BuscarFuncionarioPorNome (Funcionario funcionario)
+        public Funcionario BuscarFuncionarioPorId (Funcionario funcionario)
         {
-            return contexto.Funcionarios.FirstOrDefault(m => m.Nome == funcionario.Nome);
+            int id = funcionario.Id;
+            return contexto.Funcionarios.Find(id);
         }
 
         public void Editar(Funcionario funcionario)

@@ -94,22 +94,22 @@ namespace ProjetoFinal.Views.Funcionarios {
         protected global::System.Web.UI.WebControls.Button btnSalvar;
         
         /// <summary>
-        /// lblNomeFuncionarioEditar control.
+        /// lblIdFuncionarioEditar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNomeFuncionarioEditar;
+        protected global::System.Web.UI.WebControls.Label lblIdFuncionarioEditar;
         
         /// <summary>
-        /// txtNomeFuncionarioEditar control.
+        /// txtIdFuncionarioEditar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomeFuncionarioEditar;
+        protected global::System.Web.UI.WebControls.TextBox txtIdFuncionarioEditar;
         
         /// <summary>
         /// lblCpfFuncionarioEditado control.

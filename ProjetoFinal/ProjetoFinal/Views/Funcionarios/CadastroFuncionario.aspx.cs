@@ -35,8 +35,8 @@ namespace ProjetoFinal.Views.Funcionarios
         protected void btnEditar_Click(object sender, EventArgs e)
         {
             Funcionario func = new Funcionario();
-            func.Nome = txtNomeFuncionarioEditar.Text;
-            func = controller.BuscarFuncionarioPorNome(func);
+            func.Id = Convert.ToInt32(txtIdFuncionarioEditar.Text);
+            func = controller.BuscarFuncionarioPorId(func);
             if (func != null)
             {
                 func.CPF = txtCpfFuncionarioEditado.Text;
@@ -51,8 +51,8 @@ namespace ProjetoFinal.Views.Funcionarios
         protected void btnExcluir_Click(object sender, EventArgs e)
         {
             Funcionario func = new Funcionario();
-            func.Nome = txtExcluir.Text;
-            func = controller.BuscarFuncionarioPorNome(func);
+            func.Id = Convert.ToInt32(txtExcluir.Text);
+            func = controller.BuscarFuncionarioPorId(func);
             if (func != null)
             {
                 controller.Excluir(func);
