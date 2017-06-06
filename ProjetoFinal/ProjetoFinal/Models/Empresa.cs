@@ -21,7 +21,9 @@ namespace ProjetoFinal.Models
         }
     
         public int Id { get; set; }
+        public string CNPJ { get; set; }
         public string Nome { get; set; }
+        public string Descricao { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Funcionario> Funcionario { get; set; }

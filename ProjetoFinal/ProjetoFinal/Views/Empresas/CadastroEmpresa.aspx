@@ -1,17 +1,32 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CadastroEmpresa.aspx.cs" Inherits="ProjetoFinal.Views.Empresas.CadastroEmpresa" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h3>Cadastro de Empresas</h3>
+    <asp:Label ID="lblCnpjEmpresa" runat="server" Text="CNPJ: "></asp:Label>
+    <br />
+    <asp:TextBox ID="txtCnpjEmpresa" cssclass="form-control" runat="server"></asp:TextBox>
+    <br />
     <asp:Label ID="lblNomeEmpresa" runat="server" Text="Nome da empresa:"></asp:Label> 
+    <br />
     <asp:TextBox ID="txtNomeEmpresa" cssclass="form-control" runat="server"></asp:TextBox>
+    <br />
+    <asp:Label ID="lblDescricaoEmpresa" runat="server" Text="Descrição: "></asp:Label>
+    <br />
+    <asp:TextBox ID="txtDescricaoEmpresa" cssclass="form-control" runat="server"></asp:TextBox>
     <br />
     <asp:Button ID="btnSalvar" cssclass="btn btn-primary" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
     <br /> 
     <h3>Editar Empresas</h3>
-    Nome da empresa que gostaria de editar:
-    <asp:TextBox ID="txtNomEmpresaEditar" cssclass="form-control" runat="server"></asp:TextBox>
+    <asp:Label ID="lblIdEmpresaEditar" runat="server" Text="ID da empresa que gostaria de editar:"></asp:Label>
+    <asp:TextBox ID="txtIdEmpresaEditar" cssclass="form-control" runat="server"></asp:TextBox>
     <br />
-    Nome desejado:
+    <asp:Label ID="lblNomeEmpresadaEditado" runat="server" Text="Nome desejado:"></asp:Label>
     <asp:TextBox ID="txtNomeEmpresaEditado"  cssclass="form-control" runat="server"></asp:TextBox>
+    <br />
+    <asp:Label ID="lblCnpjEmpresaEditado" runat="server" Text="CNPJ desejado: "></asp:Label>
+    <asp:TextBox ID="txtCnpjEmpresaEditado" cssclass="form-control" runat="server"></asp:TextBox>
+    <br />
+    <asp:Label ID="lblDescricaoEmpresaEditado" runat="server" Text="Descrição desejada: "></asp:Label>
+    <asp:TextBox ID="txtDescricaoEmpresaEditado" cssclass="form-control" runat="server"></asp:TextBox>
     <br />
     <asp:Button ID="btnEditar" cssclass="btn btn-primary" runat="server" Text="Editar" OnClick="btnEditar_Click" />
     <br />
@@ -31,7 +46,7 @@
         </ContentTemplate>
         </asp:UpdatePanel>
     <h3>Excluir Empresa</h3>
-    <asp:Label ID="lblExcluir" runat="server" Text="Nome da empresa: "></asp:Label> <asp:TextBox  ID="txtExcluir" cssclass="form-control" runat="server"></asp:TextBox>
+    <asp:Label ID="lblExcluir" runat="server" Text="ID da empresa: "></asp:Label> <asp:TextBox  ID="txtExcluir" cssclass="form-control" runat="server"></asp:TextBox>
     <br />
     <asp:Button ID="btnExcluir" cssclass="btn btn-danger" runat="server" Text="Excluir" OnClick="btnExcluir_Click" />
 </asp:Content>

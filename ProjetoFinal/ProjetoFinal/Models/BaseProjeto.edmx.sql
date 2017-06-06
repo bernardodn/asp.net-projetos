@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/06/2017 15:13:39
+-- Date Created: 06/06/2017 15:46:22
 -- Generated from EDMX file: C:\Users\Bernardo Dolata Neto\asp.net\asp.net-projetos\ProjetoFinal\ProjetoFinal\Models\BaseProjeto.edmx
 -- --------------------------------------------------
 
@@ -39,7 +39,9 @@ GO
 -- Creating table 'Empresas'
 CREATE TABLE [dbo].[Empresas] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Nome] nvarchar(50)  NOT NULL
+    [CNPJ] nvarchar(max)  NOT NULL,
+    [Nome] nvarchar(max)  NOT NULL,
+    [Descricao] nvarchar(max)  NOT NULL
 );
 GO
 

@@ -24,7 +24,9 @@ namespace ProjetoFinal.Views.Empresas
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
             Empresa empresa = new Empresa();
+            empresa.CNPJ = txtCnpjEmpresa.Text;
             empresa.Nome = txtNomeEmpresa.Text;
+            empresa.Descricao = txtDescricaoEmpresa.Text;
             controller.AdicionarEmpresa(empresa);
             AtualizaLista();
         }
@@ -32,11 +34,13 @@ namespace ProjetoFinal.Views.Empresas
         protected void btnEditar_Click(object sender, EventArgs e)
         {
             Empresa emp = new Empresa();
-            emp.Nome = txtNomEmpresaEditar.Text;
-            emp = controller.BuscarEmpresaPorNome(emp);
+            emp.Id = Convert.ToInt32(txtIdEmpresaEditar.Text);
+            emp = controller.BuscarEmpresaPorId(emp);
             if (emp != null)
             {
+                emp.CNPJ = txtCnpjEmpresaEditado.Text;
                 emp.Nome = txtNomeEmpresaEditado.Text;
+                emp.Descricao = txtDescricaoEmpresaEditado.Text;
                 controller.Editar(emp);                
             }
             AtualizaLista();
@@ -45,8 +49,8 @@ namespace ProjetoFinal.Views.Empresas
         protected void btnExcluir_Click(object sender, EventArgs e)
         {
             Empresa emp = new Empresa();
-            emp.Nome = txtExcluir.Text;
-            emp = controller.BuscarEmpresaPorNome(emp);
+            emp.Id = Convert.ToInt32(txtExcluir.Text);
+            emp = controller.BuscarEmpresaPorId(emp);
             if (emp != null)
             {
                 controller.Excluir(emp);

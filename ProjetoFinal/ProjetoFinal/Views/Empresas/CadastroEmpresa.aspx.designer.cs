@@ -13,6 +13,24 @@ namespace ProjetoFinal.Views.Empresas {
     public partial class CadastroEmpresa {
         
         /// <summary>
+        /// lblCnpjEmpresa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCnpjEmpresa;
+        
+        /// <summary>
+        /// txtCnpjEmpresa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCnpjEmpresa;
+        
+        /// <summary>
         /// lblNomeEmpresa control.
         /// </summary>
         /// <remarks>
@@ -31,6 +49,24 @@ namespace ProjetoFinal.Views.Empresas {
         protected global::System.Web.UI.WebControls.TextBox txtNomeEmpresa;
         
         /// <summary>
+        /// lblDescricaoEmpresa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDescricaoEmpresa;
+        
+        /// <summary>
+        /// txtDescricaoEmpresa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDescricaoEmpresa;
+        
+        /// <summary>
         /// btnSalvar control.
         /// </summary>
         /// <remarks>
@@ -40,13 +76,31 @@ namespace ProjetoFinal.Views.Empresas {
         protected global::System.Web.UI.WebControls.Button btnSalvar;
         
         /// <summary>
-        /// txtNomEmpresaEditar control.
+        /// lblIdEmpresaEditar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomEmpresaEditar;
+        protected global::System.Web.UI.WebControls.Label lblIdEmpresaEditar;
+        
+        /// <summary>
+        /// txtIdEmpresaEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtIdEmpresaEditar;
+        
+        /// <summary>
+        /// lblNomeEmpresadaEditado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNomeEmpresadaEditado;
         
         /// <summary>
         /// txtNomeEmpresaEditado control.
@@ -56,6 +110,42 @@ namespace ProjetoFinal.Views.Empresas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNomeEmpresaEditado;
+        
+        /// <summary>
+        /// lblCnpjEmpresaEditado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCnpjEmpresaEditado;
+        
+        /// <summary>
+        /// txtCnpjEmpresaEditado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCnpjEmpresaEditado;
+        
+        /// <summary>
+        /// lblDescricaoEmpresaEditado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDescricaoEmpresaEditado;
+        
+        /// <summary>
+        /// txtDescricaoEmpresaEditado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDescricaoEmpresaEditado;
         
         /// <summary>
         /// btnEditar control.

@@ -18,7 +18,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CNPJ" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Funcionarios">
     <Key>
@@ -59,8 +61,10 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" />
           <NavigationProperty Name="Funcionario" Relationship="BaseProjeto.EmpresaFuncionario" FromRole="Empresa" ToRole="Funcionario" />
+          <Property Name="CNPJ" Type="String" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Descricao" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Funcionario">
           <Key>
@@ -95,7 +99,9 @@
       <EntityTypeMapping TypeName="IsTypeOf(BaseProjeto.Empresa)">
         <MappingFragment StoreEntitySet="Empresas">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

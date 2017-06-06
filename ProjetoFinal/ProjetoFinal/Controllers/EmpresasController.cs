@@ -21,9 +21,10 @@ namespace ProjetoFinal.Controllers
             return contexto.Empresas.ToList();
         }
 
-        public Empresa BuscarEmpresaPorNome (Empresa empresa)
+        public Empresa BuscarEmpresaPorId(Empresa empresa)
         {
-            return contexto.Empresas.FirstOrDefault(m => m.Nome == empresa.Nome);
+            int id = empresa.Id;
+            return contexto.Empresas.Find(id);
         }
 
         public void Editar(Empresa empresa)
