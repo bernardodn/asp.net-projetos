@@ -2,11 +2,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h3>Cadastro de Funcionários</h3>
+    <asp:Label ID="lblNomeFuncionario" runat="server" Text="Nome do funcionário:"></asp:Label>
+    <asp:TextBox cssclass="form-control" ID="txtNomeFuncionario" runat="server"></asp:TextBox>
+    <br />
     <asp:Label ID="lblCpfFuncionario" runat="server" Text="CPF:"></asp:Label>
     <asp:TextBox cssclass="form-control" ID="txtCpfFuncionario" runat="server"></asp:TextBox>
-    <br />
-    <asp:Label ID="lblNomeFuncionario" runat="server" Text="Nome:"></asp:Label>
-    <asp:TextBox cssclass="form-control" ID="txtNomeFuncionario" runat="server"></asp:TextBox>
     <br />
     <asp:Label ID="lblDataDeNascimentoFuncionario" runat="server" Text="Data de nascimento:"></asp:Label>
     <asp:TextBox cssclass="form-control" ID="txtDataDeNascimentoFuncionario" runat="server"></asp:TextBox>
@@ -15,6 +15,28 @@
     <asp:TextBox cssclass="form-control" ID="txtIdEmpresaFuncionario" runat="server"></asp:TextBox>
     <br />
     <asp:Button ID="btnSalvar" CssClass="btn btn-primary" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
+    <h3>Editar Funcionários</h3>
+    <br />
+    <asp:Label ID="lblNomeFuncionarioEditar" runat="server" Text="Nome do funcionário a ser editado: "></asp:Label>
+    <br />
+    <asp:TextBox ID="txtNomeFuncionarioEditar" cssclass="form-control" runat="server"></asp:TextBox>
+    <br />
+    <asp:Label ID="lblCpfFuncionarioEditado" runat="server" Text="CPF desejado: "></asp:Label>
+    <br />
+    <asp:TextBox ID="txtCpfFuncionarioEditado" cssclass="form-control" runat="server"></asp:TextBox>
+    <br />
+    <asp:Label ID="lblNomeFuncionarioEditado" runat="server" Text="Nome desejado: "></asp:Label>
+    <br />
+    <asp:TextBox ID="txtNomeFuncionarioEditado" cssclass="form-control" runat="server"></asp:TextBox>
+    <br />
+    <asp:Label ID="lblDataDeNascimentoFuncionarioEditado" runat="server" Text="Data de nascimento desejada: "></asp:Label>
+    <br />
+    <asp:TextBox ID="txtDataDeNascimentoFuncionarioEditado" cssclass="form-control" runat="server"></asp:TextBox>
+    <br />
+    <asp:Label ID="lblIdEmpresaFuncionarioEditado" runat="server" Text="ID da empresa desejado: "></asp:Label>
+    <br />
+    <asp:TextBox ID="txtIdEmpresaFuncionarioEditado" cssclass="form-control" runat="server"></asp:TextBox>
+    <br />
     <asp:Button ID="btnEditar" cssclass="btn btn-primary" runat="server" Text="Editar" OnClick="btnEditar_Click" />
     <br />
     <h3>Lista de Funcionários</h3>

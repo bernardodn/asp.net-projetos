@@ -6,9 +6,12 @@
     <br />
     <asp:Button ID="btnSalvar" cssclass="btn btn-primary" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
     <br /> 
+    <h3>Editar Empresas</h3>
+    Nome da empresa que gostaria de editar:
+    <asp:TextBox ID="txtNomEmpresaEditar" cssclass="form-control" runat="server"></asp:TextBox>
     <br />
-    Editar:
-    <asp:TextBox ID="txtEditar" cssclass="form-control" runat="server"></asp:TextBox>
+    Nome desejado:
+    <asp:TextBox ID="txtNomeEmpresaEditado"  cssclass="form-control" runat="server"></asp:TextBox>
     <br />
     <asp:Button ID="btnEditar" cssclass="btn btn-primary" runat="server" Text="Editar" OnClick="btnEditar_Click" />
     <br />

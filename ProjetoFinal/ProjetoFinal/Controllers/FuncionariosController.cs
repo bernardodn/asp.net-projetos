@@ -2,11 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace ProjetoFinal.Controllers
 {
-    
+
     public class FuncionariosController : BaseController
     {
         public void AdicionarFuncionario(Funcionario funcionario)
@@ -18,15 +17,26 @@ namespace ProjetoFinal.Controllers
             }
         }
 
-
         public List<Funcionario> Listar()
         {
             return contexto.Funcionarios.ToList();
         }
 
-        public static implicit operator FuncionariosController(EmpresasController v)
+        public Funcionario BuscarFuncionarioPorNome (Funcionario funcionario)
         {
-            throw new NotImplementedException();
+            return contexto.Funcionarios.FirstOrDefault(m => m.Nome == funcionario.Nome);
+        }
+
+        public void Editar(Funcionario funcionario)
+        {
+            contexto.Entry(funcionario).State = System.Data.Entity.EntityState.Modified;
+            contexto.SaveChanges();
+        }
+
+        public void Excluir(Funcionario funcionario)
+        {
+            contexto.Entry(funcionario).State = System.Data.Entity.EntityState.Deleted;
+            contexto.SaveChanges();
         }
     }
 }

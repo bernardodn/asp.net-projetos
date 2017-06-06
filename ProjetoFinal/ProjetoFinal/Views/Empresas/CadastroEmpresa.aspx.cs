@@ -2,26 +2,23 @@
 using ProjetoFinal.Models;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
 
 namespace ProjetoFinal.Views.Empresas
 {
     public partial class CadastroEmpresa : System.Web.UI.Page
     {
-        protected BaseProjetoContainer contexto = new BaseProjetoContainer();
         EmpresasController controller = new EmpresasController();
-        
         protected void Page_Load(object sender, EventArgs e)
         {
-            //List<Empresa> lista = controller.Listar();
-            //gdvEmpresas.DataSource = lista.OrderBy(c => c.Id);
-            //gdvEmpresas.DataBind();
             AtualizaLista();
+        }
+
+        protected void AtualizaLista()
+        {
+            List<Empresa> lista = controller.Listar();
+            gdvEmpresas.DataSource = lista.OrderBy(c => c.Id);
+            gdvEmpresas.DataBind();
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
@@ -32,38 +29,27 @@ namespace ProjetoFinal.Views.Empresas
             AtualizaLista();
         }
 
-
-        protected void AtualizaLista()
+        protected void btnEditar_Click(object sender, EventArgs e)
         {
-            List<Empresa> lista = controller.Listar();
-            gdvEmpresas.DataSource = lista.OrderBy(c => c.Id);
-            gdvEmpresas.DataBind();
-        }
-        protected void btnExcluir_Click(object sender, EventArgs e)
-        {
-            Empresa empresa;
-            using (var ctx = new BaseProjetoContainer())
-            { 
-                empresa = ctx.Empresas.Where(s => s.Nome == (txtExcluir.Text)).FirstOrDefault<Empresa>();
-            }
-            using (var novoCtx = new BaseProjetoContainer())
+            Empresa emp = new Empresa();
+            emp.Nome = txtNomEmpresaEditar.Text;
+            emp = controller.BuscarEmpresaPorNome(emp);
+            if (emp != null)
             {
-                novoCtx.Entry(empresa).State = System.Data.Entity.EntityState.Deleted;
-                novoCtx.SaveChanges();
+                emp.Nome = txtNomeEmpresaEditado.Text;
+                controller.Editar(emp);                
             }
             AtualizaLista();
         }
 
-        protected void btnEditar_Click(object sender, EventArgs e)
+        protected void btnExcluir_Click(object sender, EventArgs e)
         {
-            using (var novoCtx = new BaseProjetoContainer())
+            Empresa emp = new Empresa();
+            emp.Nome = txtExcluir.Text;
+            emp = controller.BuscarEmpresaPorNome(emp);
+            if (emp != null)
             {
-                var result = novoCtx.Empresas.SingleOrDefault(b => b.Nome == (txtNomeEmpresa.Text));
-                if (result != null)
-                {
-                    result.Nome = txtEditar.Text;
-                    novoCtx.SaveChanges();
-                }
+                controller.Excluir(emp);
             }
             AtualizaLista();
         }

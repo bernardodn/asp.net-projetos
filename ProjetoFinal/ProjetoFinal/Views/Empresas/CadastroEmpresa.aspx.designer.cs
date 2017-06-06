@@ -40,13 +40,22 @@ namespace ProjetoFinal.Views.Empresas {
         protected global::System.Web.UI.WebControls.Button btnSalvar;
         
         /// <summary>
-        /// txtEditar control.
+        /// txtNomEmpresaEditar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEditar;
+        protected global::System.Web.UI.WebControls.TextBox txtNomEmpresaEditar;
+        
+        /// <summary>
+        /// txtNomeEmpresaEditado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNomeEmpresaEditado;
         
         /// <summary>
         /// btnEditar control.

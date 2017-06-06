@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ProjetoFinal.Controllers
 {
-    public class BaseController
+    public class BaseController : System.Web.UI.Page
     {
         protected static BaseProjetoContainer contexto = new BaseProjetoContainer();
     }

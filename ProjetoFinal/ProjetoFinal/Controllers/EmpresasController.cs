@@ -21,9 +21,20 @@ namespace ProjetoFinal.Controllers
             return contexto.Empresas.ToList();
         }
 
+        public Empresa BuscarEmpresaPorNome (Empresa empresa)
+        {
+            return contexto.Empresas.FirstOrDefault(m => m.Nome == empresa.Nome);
+        }
+
         public void Editar(Empresa empresa)
         {
             contexto.Entry(empresa).State = System.Data.Entity.EntityState.Modified;
+            contexto.SaveChanges();
+        }
+
+        public void Excluir (Empresa empresa)
+        {
+            contexto.Entry(empresa).State = System.Data.Entity.EntityState.Deleted;
             contexto.SaveChanges();
         }
     }

@@ -13,24 +13,6 @@ namespace ProjetoFinal.Views.Funcionarios {
     public partial class CadastroFuncionario {
         
         /// <summary>
-        /// lblCpfFuncionario control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCpfFuncionario;
-        
-        /// <summary>
-        /// txtCpfFuncionario control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCpfFuncionario;
-        
-        /// <summary>
         /// lblNomeFuncionario control.
         /// </summary>
         /// <remarks>
@@ -47,6 +29,24 @@ namespace ProjetoFinal.Views.Funcionarios {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNomeFuncionario;
+        
+        /// <summary>
+        /// lblCpfFuncionario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCpfFuncionario;
+        
+        /// <summary>
+        /// txtCpfFuncionario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCpfFuncionario;
         
         /// <summary>
         /// lblDataDeNascimentoFuncionario control.
@@ -92,6 +92,96 @@ namespace ProjetoFinal.Views.Funcionarios {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSalvar;
+        
+        /// <summary>
+        /// lblNomeFuncionarioEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNomeFuncionarioEditar;
+        
+        /// <summary>
+        /// txtNomeFuncionarioEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNomeFuncionarioEditar;
+        
+        /// <summary>
+        /// lblCpfFuncionarioEditado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCpfFuncionarioEditado;
+        
+        /// <summary>
+        /// txtCpfFuncionarioEditado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCpfFuncionarioEditado;
+        
+        /// <summary>
+        /// lblNomeFuncionarioEditado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNomeFuncionarioEditado;
+        
+        /// <summary>
+        /// txtNomeFuncionarioEditado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNomeFuncionarioEditado;
+        
+        /// <summary>
+        /// lblDataDeNascimentoFuncionarioEditado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDataDeNascimentoFuncionarioEditado;
+        
+        /// <summary>
+        /// txtDataDeNascimentoFuncionarioEditado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDataDeNascimentoFuncionarioEditado;
+        
+        /// <summary>
+        /// lblIdEmpresaFuncionarioEditado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIdEmpresaFuncionarioEditado;
+        
+        /// <summary>
+        /// txtIdEmpresaFuncionarioEditado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtIdEmpresaFuncionarioEditado;
         
         /// <summary>
         /// btnEditar control.

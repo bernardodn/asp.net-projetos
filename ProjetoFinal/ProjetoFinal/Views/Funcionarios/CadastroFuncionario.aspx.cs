@@ -11,38 +11,6 @@ namespace ProjetoFinal.Views.Funcionarios
         FuncionariosController controller = new FuncionariosController();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //List<Funcionario> lista = controller.Listar();
-            //gdvFuncionarios.DataSource = lista.OrderBy(c => c.Id);
-            //gdvFuncionarios.DataBind();
-            AtualizaLista();
-        }
-
-        protected void btnSalvar_Click(object sender, EventArgs e)
-        {
-            
-            Funcionario funcionario = new Funcionario();
-
-            funcionario.CPF = txtCpfFuncionario.Text;
-            funcionario.Nome = txtNomeFuncionario.Text;
-            funcionario.DataDeNascimento = txtDataDeNascimentoFuncionario.Text;
-            funcionario.EmpresaId = Convert.ToInt32(txtIdEmpresaFuncionario.Text);
-
-            controller.AdicionarFuncionario(funcionario);
-            AtualizaLista();
-        }
-
-        protected void btnExcluir_Click(object sender, EventArgs e)
-        {
-            Funcionario funcionario;
-            using (var ctx = new BaseProjetoContainer())
-            {
-                funcionario = ctx.Funcionarios.Where(s => s.Nome == (txtExcluir.Text)).FirstOrDefault<Funcionario>();
-            }
-            using (var novoCtx = new BaseProjetoContainer())
-            {
-                novoCtx.Entry(funcionario).State = System.Data.Entity.EntityState.Deleted;
-                novoCtx.SaveChanges();
-            }
             AtualizaLista();
         }
 
@@ -53,19 +21,41 @@ namespace ProjetoFinal.Views.Funcionarios
             gdvFuncionarios.DataBind();
         }
 
+        protected void btnSalvar_Click(object sender, EventArgs e)
+        {     
+            Funcionario funcionario = new Funcionario();
+            funcionario.CPF = txtCpfFuncionario.Text;
+            funcionario.Nome = txtNomeFuncionario.Text;
+            funcionario.DataDeNascimento = txtDataDeNascimentoFuncionario.Text;
+            funcionario.EmpresaId = Convert.ToInt32(txtIdEmpresaFuncionario.Text);
+            controller.AdicionarFuncionario(funcionario);
+            AtualizaLista();
+        }
+
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-            using (var novoCtx = new BaseProjetoContainer())
+            Funcionario func = new Funcionario();
+            func.Nome = txtNomeFuncionarioEditar.Text;
+            func = controller.BuscarFuncionarioPorNome(func);
+            if (func != null)
             {
-                var result = novoCtx.Funcionarios.SingleOrDefault(b => b.CPF == (txtCpfFuncionario.Text));
-                if (result != null)
-                {
-                    result.CPF = txtCpfFuncionario.Text;
-                    result.Nome = txtNomeFuncionario.Text;
-                    result.DataDeNascimento = txtDataDeNascimentoFuncionario.Text;
-                    result.EmpresaId = Convert.ToInt32(txtIdEmpresaFuncionario.Text);
-                    novoCtx.SaveChanges();
-                }
+                func.CPF = txtCpfFuncionarioEditado.Text;
+                func.Nome = txtNomeFuncionarioEditado.Text;
+                func.DataDeNascimento = txtDataDeNascimentoFuncionarioEditado.Text;
+                func.EmpresaId = Convert.ToInt32(txtIdEmpresaFuncionarioEditado.Text);
+                controller.Editar(func);
+            }
+            AtualizaLista();
+        }
+
+        protected void btnExcluir_Click(object sender, EventArgs e)
+        {
+            Funcionario func = new Funcionario();
+            func.Nome = txtExcluir.Text;
+            func = controller.BuscarFuncionarioPorNome(func);
+            if (func != null)
+            {
+                controller.Excluir(func);
             }
             AtualizaLista();
         }
